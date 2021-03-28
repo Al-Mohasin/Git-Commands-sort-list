@@ -1,0 +1,176 @@
+
+================================================
+------------------------------------------------
+--------   GIT COMMAND LIST & DETAILS   --------
+------------------------------------------------
+================================================
+
+All about Git informtion :  https://git-scm.com/docs
+
+================================================
+BASIC COMMAND
+==============
+>>>git --version--------------------------------check git version.
+>>>git update-git-for-windows-------------------command for update Git Bash.
+
+>>>pwd------------------------------------------view current directory.
+>>>ls-------------------------------------------view all file & folder list.
+>>>touch [one.txt]------------------------------create a new file name "one.txt".
+>>>mkdir [folderName]---------------------------create a new folder name "git_one".
+>>>cd [projectName]-----------------------------enter the [projectName] folder.
+>>>cd ../---------------------------------------back one step.
+>>>clear----------------------------------------text & all command line will clear.
+>>>cat [fileName]-------------------------------view file text.
+
+
+================================================
+CLONE, PULL, FETCH
+==============
+>>>git clone [repositoryLink]-------------------clone the project with original Repository name.
+>>>git clone [repositoryURL] [folderName]-------clone the project with rename [folderName].
+>>>git clone [repository_SSH_URL]---------------create a local copy of a remote repository
+
+>>>git pull-------------------------------------update current working branch and merge all commit.
+>>>git pull origin master-----------------------pulls the master branch merges with current branch.
+>>>git pull origin [branchName]-----------------pull & change the branch from remote repository.
+
+>>>git fetch origin-----------------------------update local repository without merge commit.
+>>>git merge------------------------------------after fetch need to merge.
+>>>git log origin/main ^main--------------------after fetch view updated commit info.
+>>>git log origin/master ^master---------------- ||  --that--
+>>>git fetch origin [branch]:[branch]-----------fetch a new branch.
+
+
+================================================
+REMOTE, PUSH
+==============
+>>>git remote add [remoteName] [remoteURL]------|| (Syntax)
+>>>git remote add origin [https/ssh_url]--------add a remote repository.
+>>>git remote -v--------------------------------view repository link.
+
+>>>git push-------------------------------------push current branch to the tracking remote branch.
+>>>git push origin------------------------------push to the origin remote repository.
+>>>git push -u origin master--------------------push to remote repository master branch.
+>>>git push -u origin [branchName]--------------push & change the remote repository select branch.
+>>>git push -all origin-------------------------push all branches to remote repository.
+
+
+================================================
+INITIALIZATION
+==============
+>>>git init-------------------------------------initialize a local git repository.
+>>>git status-----------------------------------view present status / Check status 
+>>>git add .   ---------------------------------add all current standing files to the staging area.
+>>>git add *   ---------------------------------add all current standing files to the staging area. 
+>>>git add -A-----------------------------------add all current standing files to the staging area.
+>>>git add --all--------------------------------add all current standing files to the staging area.
+>>>git add [fileName]---------------------------add a file to the staging area.
+
+>>>git reset------------------------------------back one stage without delete file.
+>>>git reset HEAD [fileName]--------------------staged selected file will delete from stage area.
+
+>>>git mv [fileName] [fileRename]---------------file will rename & will add stage area.
+>>>git rm -r [fileName]-------------------------remove a file (or folder).
+>>>git rm -f [fileName]-------------------------staged file will delete.
+>>>git rm -r -f [folderName]--------------------staged folder & its file will delete.
+>>>git rm --cached [fileName]-------------------after add staged [file] will stop tracking.
+
+>>>git restore [fileName]-----------------------staged modified file will unmodify & add stage.
+>>>git restore --staged [fileName]--------------unstage selected-file.
+>>>git checkout -- [fileName]-------------------modified file info will return.
+>>>git checkout -f------------------------------modified all file info will return.
+
+
+================================================
+COMMIT
+==============
+>>>git commit -m "[Message]"--------------------current content will store from stage.
+>>>git commit -a -m "[Message]"-----------------only staged modified files will add & commit.
+>>>git commit -m "[Message]" [fileName]---------commit a selected file.
+
+>>>git commit --amend -m "[message]"------------change the last commit
+>>>git commit --amend---------------------------change last Commit. [(1.press-key i, 2.write message, 3.press-key Esc, write :wq 4.press Enter key)
+>>>git rebase -i HEAD~n/3/4/5-------------------select option follow same.
+>>>git push --force-----------------------------for push after edit commit changes.
+
+
+================================================
+DIFFERENCES
+==============
+>>>git diff-------------------------------------view last change details between modified & staged.
+>>>git diff --staged----------------------------view last change between staged & last commit.
+>>>git show [commitNumber]----------------------view the changes a selected commit.
+>>>git diff [commitNo.1] [commitNo.2]-----------view the changes between two commit.
+
+
+================================================
+LOG DETAILS
+==============
+>>>git log --follow [fileName]------------------view commit details about select file.
+>>>git log--------------------------------------view all commited Message details by DESC.
+>>>git log -p-----------------------------------view commit details.
+>>>git log -p -1--------------------------------view last commit details.
+>>>git log -p -3--------------------------------view last 3 commits details.
+>>>git log --summary----------------------------view commit summary. 
+>>>git log --oneline----------------------------view commit messages very sortly oneline.
+>>>git log --pretty=oneline---------------------view commit messages sortly oneline.
+>>>git log --pretty=short-----------------------view commit with sort details.
+>>>git log --pretty=full------------------------view commit messages details.
+>>>git log --since=2.days-----------------------view last 2 days commit details.
+>>>git log --since=2.weeks----------------------view last 2 weeks commit details
+>>>git log --since=2.months---------------------view last 2 months commit details
+>>>git log --since=2.years----------------------view last 2 years commit details
+>>>git log --pretty=format:"%h -- %an"----------view commit number & author name.
+>>>git log --pretty=format:"%h -- %ae"----------view commit number & author email.
+
+
+================================================
+BRANCH
+==============
+>>>git branch [branchName]----------------------create a new branch.
+>>>git branch-----------------------------------view local repository branches..
+>>>git branch -a--------------------------------view all local and remote branches list.
+>>>git checkout [branchName]--------------------switch to a branch.
+>>>git checkout -b [branchName]-----------------create a new branch and switch to it.
+>>>git checkout -   ----------------------------switch to the branch last checked out.
+
+>>>git branch -M [newName]----------------------rename the active branch will "newName".
+>>>git branch -m [newName]----------------------rename the active branch will "newName".
+>>>git branch -m [oldName] [newName]------------rename a local branch.
+>>>git branch -d [branchName]-------------------delete select branch (local directory).(view warning)
+>>>git branch -D [branchName]-------------------delete select branch (local directory).
+
+>>>git push -u origin master--------------------push to remote repository master branch.
+>>>git push -u origin [branchName]--------------push to remote repository select branch.
+>>>git push -d origin [branchName]--------------delete branch from remote.--(Github directory)
+>>>git push origin --delete [branchName]--------delete branch from remote.--(Github directory)
+
+>>>git diff [sourceBranch] [targetBranch]-------view the changes before merging.
+>>>git branch -v--------------------------------view active branches last commit.
+>>>git branch --merged--------------------------view already merged branch list.
+>>>git branch --no-merged-----------------------view no merged branch list.	
+>>>git merge [branchName]-----------------------merge a branch into the active branch.
+>>>git merge [sourceBranch] [targetBranch]------merge a branch into a target branch.
+
+
+================================================
+USER
+==============
+>>>git config --global --unset http.proxy-------unset current user for access another user.
+>>>git config --global user.name "[username]"---set a username for entry permission globally.
+>>>git config --global user.email "[email]"-----set a email for entry permission globally or for all project.
+>>>git config user.name "[username]"------------set a username for entry permission in running project.
+>>>git config user.email "[email]"--------------set a user email for entry permission in running project.
+>>>git config --list----------------------------view all configuration list like Username, Email etcc.
+
+**********************
+For delete user information from computer enter
+---> [ Credential manager>Windows Credential ] <---
+then find out Github user information & remove. 
+**********************
+
+===============================================================================
+=== END ===
+
+
+
